@@ -2,23 +2,11 @@ jobs:
   first_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up job
-        run: echo "Starting job"
-
-      - name: Checkout Repo
+      - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: List and Read file
-        run: ls && cat README.md
 
       - name: Install cowsay
         run: sudo apt-get update && sudo apt-get install -y cowsay
 
       - name: Generate ASCII Artwork
         run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
-
-      - name: Post Checkout Repo
-        run: echo "Post checkout step"
-
-      - name: Complete job
-        run: echo "Job complete"
